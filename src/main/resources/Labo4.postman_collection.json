@@ -1,0 +1,321 @@
+{
+	"info": {
+		"_postman_id": "327774a2-6afa-43fe-add4-ba2da124abbb",
+		"name": "Labo4",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "17915684"
+	},
+	"item": [
+		{
+			"name": "Empleado",
+			"item": [
+				{
+					"name": "crear empleado OK",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"legajo\" : 1, \r\n    \"nombre\" : \"miguel\",\r\n    \"apellido\" : \"caceres\",\r\n    \"fecha_nacimiento\" : \"04-09-1995\",\r\n    \"area_id\" : 1,\r\n    \"sueldo_bruto\" : 1000000,\r\n    \"fecha_ingreso\" : \"02-02-2020\"\r\n\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/empleado",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"empleado"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "crear empleado AREA NO EXISTE",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"legajo\" : 1, \r\n    \"nombre\" : \"miguel\",\r\n    \"apellido\" : \"caceres\",\r\n    \"fecha_nacimiento\" : \"04-09-1995\",\r\n    \"area_id\" : 100000,\r\n    \"sueldo_bruto\" : 1000000,\r\n    \"fecha_ingreso\" : \"02-02-2020\"\r\n\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/empleado",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"empleado"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener todos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/empleado",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"empleado"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Recibo",
+			"item": [
+				{
+					"name": "crear OK",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"empleado_id\" : 10, \r\n    \"año\" : 2022, \r\n    \"mes\" : 1, \r\n    \"monto_antiguedad\" : 50,\r\n    \"jubilacion\" : 1000,\r\n    \"obra_social\" : 1000,\r\n    \"fondo_alta_complejidad\" : 1000\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/recibo",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"recibo"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Mes mayor a 12",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"empleado_id\" : 10, \r\n    \"año\" : 2022, \r\n    \"mes\" : 13, \r\n    \"monto_antiguedad\" : 50,\r\n    \"jubilacion\" : 1000,\r\n    \"obra_social\" : 1000,\r\n    \"fondo_alta_complejidad\" : 1000\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/recibo",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"recibo"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Mes menor o igual a 0",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"empleado_id\" : 10, \r\n    \"año\" : 2022, \r\n    \"mes\" : 0, \r\n    \"monto_antiguedad\" : 50,\r\n    \"jubilacion\" : 1000,\r\n    \"obra_social\" : 1000,\r\n    \"fondo_alta_complejidad\" : 1000\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/recibo",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"recibo"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "crear  EMPLEADO NO EXISTE",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"empleado_id\" : 10, \r\n    \"año\" : 2022, \r\n    \"mes\" : 1, \r\n    \"monto_antiguedad\" : 50,\r\n    \"jubilacion\" : 1000,\r\n    \"obra_social\" : 1000,\r\n    \"fondo_alta_complejidad\" : 1000\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/recibo",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"recibo"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "todos por legajo",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/recibo?legajo=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"recibo"
+							],
+							"query": [
+								{
+									"key": "legajo",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Reporte",
+			"item": [
+				{
+					"name": "ver reporte",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"año\":2022, \r\n    \"mes\": 1\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/reporte",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"reporte"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ver reporte mes menor a 0",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"año\":2022, \r\n    \"mes\": 0\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/reporte",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"reporte"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ver reporte mes mayor a 12",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"año\":2022, \r\n    \"mes\": 13\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/reporte",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"reporte"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
